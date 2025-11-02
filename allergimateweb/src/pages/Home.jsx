@@ -45,7 +45,7 @@ const Home = () => {
               </div>
             </div>
             <div className="relative">
-              <div className="bg-white rounded-lg shadow-xl p-4 transform rotate-3 hover:rotate-0 transition duration-300">
+              <div className="bg-white rounded-lg shadow-xl p-4 ">
                 <img 
                   src={familyEatImage} 
                   alt="Family eating together safely" 
