@@ -9,10 +9,10 @@ const Footer = () => {
           {/* Company Info */}
           <div className="col-span-1 md:col-span-2">
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 rounded-lg flex items-center justify-center p-1 bg-white">
-                <img src={logo} alt="AllergiMate Logo" className="w-full h-full object-contain" />
-              </div>
-              <h2 className="text-2xl font-bold text-white">AllergiMate</h2>
+                <div className="w-12 h-12 flex items-center justify-center">
+                    <img src={logo} alt="AllergiMate Logo" className="w-15 h-15 object-contain mt-2" />
+                </div>
+                <h2 className="text-2xl font-bold text-white">AllergiMate</h2>
             </div>
             <p className="text-white mb-6 max-w-md">
               AllergiMate is your trusted companion for managing allergies safely and effectively. 

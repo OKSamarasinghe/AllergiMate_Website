@@ -11,11 +11,11 @@ const Navbar = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo and Company Name */}
           <div className="flex items-center space-x-3">
-            <div className="w-12 h-12 rounded-lg flex items-center justify-center p-1 bg-white" >
-              <img src={logo} alt="AllergiMate Logo" className="w-full h-full object-contain" />
-            </div>
-            <h1 className="text-2xl font-bold text-white">AllergiMate</h1>
+            <div className="w-12 h-12 flex items-center justify-center">
+                <img src={logo} alt="AllergiMate Logo" className="w-15 h-15 object-contain mt-2" />
           </div>
+        <h1 className="text-2xl font-bold text-white">AllergiMate</h1>
+        </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
