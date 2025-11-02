@@ -110,19 +110,20 @@ const Navbar = () => {
                 Product
               </Link>
               <Link 
-                to="/contact"
-                className={`text-white block px-3 py-2 rounded-md text-base font-medium ${activeLink === 'contact' ? 'border-l-4 border-white' : ''}`}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Contact
-              </Link>
-              <Link 
                 to="/team"
                 className={`text-white block px-3 py-2 rounded-md text-base font-medium ${activeLink === 'team' ? 'border-l-4 border-white' : ''}`}
                 onClick={() => setIsMenuOpen(false)}
               >
                 Team
               </Link>
+              <Link 
+                to="/contact"
+                className={`text-white block px-3 py-2 rounded-md text-base font-medium ${activeLink === 'contact' ? 'border-l-4 border-white' : ''}`}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Contact
+              </Link>
+              
             </div>
           </div>
         )}
