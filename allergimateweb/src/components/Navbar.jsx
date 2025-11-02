@@ -1,61 +1,69 @@
 import React, { useState } from 'react';
+import { Link, useLocation } from 'react-router-dom';
 import logo from '../assets/logo.png';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState('home');
+  const location = useLocation();
+  
+  // Function to determine active link based on current route
+  const getActiveLink = () => {
+    const path = location.pathname;
+    if (path === '/') return 'home';
+    if (path === '/about') return 'about';
+    if (path === '/product') return 'product';
+    if (path === '/team') return 'team';
+    if (path === '/contact') return 'contact';
+    return 'home';
+  };
+
+  const activeLink = getActiveLink();
 
   return (
     <nav className="shadow-lg fixed w-full top-0 z-50" style={{backgroundColor: '#2196F3'}}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo and Company Name */}
-          <div className="flex items-center space-x-3">
+          {/* Logo and Company Name - Click to go home */}
+          <Link to="/" className="flex items-center space-x-3">
             <div className="w-12 h-12 flex items-center justify-center">
-                <img src={logo} alt="AllergiMate Logo" className="w-15 h-15 object-contain mt-2" />
-          </div>
-        <h1 className="text-2xl font-bold text-white">AllergiMate</h1>
-        </div>
+              <img src={logo} alt="AllergiMate Logo" className="w-15 h-15 object-contain mt-2" />
+            </div>
+            <h1 className="text-2xl font-bold text-white">AllergiMate</h1>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
-              <a 
-                href="#home" 
-                onClick={() => setActiveLink('home')}
+              <Link 
+                to="/"
                 className={`text-white px-3 py-2 rounded-md text-sm font-medium transition duration-200 ${activeLink === 'home' ? 'border-b-2 border-white' : ''}`}
               >
                 Home
-              </a>
-              <a 
-                href="#about" 
-                onClick={() => setActiveLink('about')}
+              </Link>
+              <Link 
+                to="/about"
                 className={`text-white px-3 py-2 rounded-md text-sm font-medium transition duration-200 ${activeLink === 'about' ? 'border-b-2 border-white' : ''}`}
               >
                 About
-              </a>
-              <a 
-                href="#product" 
-                onClick={() => setActiveLink('product')}
+              </Link>
+              <Link 
+                to="/product"
                 className={`text-white px-3 py-2 rounded-md text-sm font-medium transition duration-200 ${activeLink === 'product' ? 'border-b-2 border-white' : ''}`}
               >
                 Product
-              </a>
-              <a 
-                href="#team" 
-                onClick={() => setActiveLink('team')}
+              </Link>
+              <Link 
+                to="/team"
                 className={`text-white px-3 py-2 rounded-md text-sm font-medium transition duration-200 ${activeLink === 'team' ? 'border-b-2 border-white' : ''}`}
               >
                 Team
-              </a>
-              <a 
-                href="#contact" 
-                onClick={() => setActiveLink('contact')}
+              </Link>
+              <Link 
+                to="/contact"
                 className={`text-white px-3 py-2 rounded-md text-sm font-medium transition duration-200 ${activeLink === 'contact' ? 'border-b-2 border-white' : ''}`}
               >
                 Contact
-              </a>
-              
+              </Link>
             </div>
           </div>
 
@@ -80,41 +88,41 @@ const Navbar = () => {
         {isMenuOpen && (
           <div className="md:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-white border-opacity-20" style={{backgroundColor: '#2196F3'}}>
-              <a 
-                href="#home" 
-                onClick={() => setActiveLink('home')}
+              <Link 
+                to="/"
                 className={`text-white block px-3 py-2 rounded-md text-base font-medium ${activeLink === 'home' ? 'border-l-4 border-white' : ''}`}
+                onClick={() => setIsMenuOpen(false)}
               >
                 Home
-              </a>
-              <a 
-                href="#about" 
-                onClick={() => setActiveLink('about')}
+              </Link>
+              <Link 
+                to="/about"
                 className={`text-white block px-3 py-2 rounded-md text-base font-medium ${activeLink === 'about' ? 'border-l-4 border-white' : ''}`}
+                onClick={() => setIsMenuOpen(false)}
               >
                 About
-              </a>
-              <a 
-                href="#product" 
-                onClick={() => setActiveLink('product')}
+              </Link>
+              <Link 
+                to="/product"
                 className={`text-white block px-3 py-2 rounded-md text-base font-medium ${activeLink === 'product' ? 'border-l-4 border-white' : ''}`}
+                onClick={() => setIsMenuOpen(false)}
               >
                 Product
-              </a>
-              <a 
-                href="#contact" 
-                onClick={() => setActiveLink('contact')}
+              </Link>
+              <Link 
+                to="/contact"
                 className={`text-white block px-3 py-2 rounded-md text-base font-medium ${activeLink === 'contact' ? 'border-l-4 border-white' : ''}`}
+                onClick={() => setIsMenuOpen(false)}
               >
                 Contact
-              </a>
-              <a 
-                href="#team" 
-                onClick={() => setActiveLink('team')}
+              </Link>
+              <Link 
+                to="/team"
                 className={`text-white block px-3 py-2 rounded-md text-base font-medium ${activeLink === 'team' ? 'border-l-4 border-white' : ''}`}
+                onClick={() => setIsMenuOpen(false)}
               >
                 Team
-              </a>
+              </Link>
             </div>
           </div>
         )}

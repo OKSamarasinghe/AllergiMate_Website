@@ -1,8 +1,12 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import familyEatImage from '../assets/familyeat.jpg';
 
 const Home = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
@@ -13,32 +17,40 @@ const Home = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-5xl lg:text-6xl font-bold mb-6 leading-tight" style={{color: '#2196F3'}}>
-                🌿 AllergiMate — Eat Freely. 
+                🌿 AllergiMate <br></br> Eat Freely. 
                 <span style={{color: '#38C558'}}> Live Fearlessly.</span>
               </h1>
               <p className="text-xl mb-8 leading-relaxed text-gray-600">
                 AI-powered food allergy detection for safer dining — at home, on the go, or in restaurants.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <button className="px-8 py-4 rounded-lg font-semibold text-lg transition duration-200 transform hover:scale-105 text-white" style={{backgroundColor: '#38C558'}} onMouseEnter={(e) => e.target.style.backgroundColor = '#2E8B57'} onMouseLeave={(e) => e.target.style.backgroundColor = '#38C558'}>
-                  📱 Discover Our Vision
+                <button 
+                  className="px-8 py-4 rounded-lg font-semibold text-lg transition duration-200 transform hover:scale-105 text-white" 
+                  style={{backgroundColor: '#38C558'}} 
+                  onMouseEnter={(e) => e.target.style.backgroundColor = '#2E8B57'} 
+                  onMouseLeave={(e) => e.target.style.backgroundColor = '#38C558'}
+                  onClick={() => navigate('/product')}
+                >
+                  📱 Discover Our Product
                 </button>
-                <button className="border-2 px-8 py-4 rounded-lg font-semibold text-lg transition duration-200" style={{borderColor: '#2196F3', color: '#2196F3'}} onMouseEnter={(e) => {e.target.style.backgroundColor = '#2196F3'; e.target.style.color = 'white'}} onMouseLeave={(e) => {e.target.style.backgroundColor = 'transparent'; e.target.style.color = '#2196F3'}}>
+                <button 
+                  className="border-2 px-8 py-4 rounded-lg font-semibold text-lg transition duration-200" 
+                  style={{borderColor: '#2196F3', color: '#2196F3'}} 
+                  onMouseEnter={(e) => {e.target.style.backgroundColor = '#2196F3'; e.target.style.color = 'white'}} 
+                  onMouseLeave={(e) => {e.target.style.backgroundColor = 'transparent'; e.target.style.color = '#2196F3'}}
+                  onClick={() => navigate('/about')}
+                >
                   🧑‍🍳 Join the Movement
                 </button>
               </div>
             </div>
             <div className="relative">
-              <div className="bg-white rounded-lg shadow-xl p-8 transform rotate-3 hover:rotate-0 transition duration-300">
-                <div className="w-full h-64 rounded-lg flex items-center justify-center" style={{background: 'linear-gradient(135deg, #E3F2FD 0%, #BBDEFB 100%)'}}>
-                  <div className="text-center">
-                    <div className="w-20 h-20 rounded-full mx-auto mb-4 flex items-center justify-center" style={{backgroundColor: '#2196F3'}}>
-                      <span className="text-white text-3xl">📱</span>
-                    </div>
-                    <h3 className="font-semibold text-lg" style={{color: '#1976D2'}}>Food Scanning Made Simple</h3>
-                    <p className="mt-2" style={{color: '#1565C0'}}>Scan, Detect, Enjoy Safely</p>
-                  </div>
-                </div>
+              <div className="bg-white rounded-lg shadow-xl p-4 transform rotate-3 hover:rotate-0 transition duration-300">
+                <img 
+                  src={familyEatImage} 
+                  alt="Family eating together safely" 
+                  className="w-full h-64 object-cover rounded-lg"
+                />
               </div>
             </div>
           </div>
@@ -88,7 +100,7 @@ const Home = () => {
         </div>
       </section>
 
-      {/* The Problem Section */}
+      {/* The Problem Section - Updated with Icons */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -101,28 +113,28 @@ const Home = () => {
             <div>
               <div className="space-y-8">
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style={{backgroundColor: '#2196F3'}}>
-                    <span className="text-white text-xl font-bold">220M</span>
+                  <div className="w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0" style={{backgroundColor: '#2196F3'}}>
+                    <span className="text-white text-2xl">🌍</span>
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">Global Food Allergy Sufferers</h3>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-2">220M Global Food Allergy Sufferers</h3>
                     <p className="text-gray-600">Over 220 million people around the world suffer from food allergies.</p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style={{backgroundColor: '#38C558'}}>
-                    <span className="text-white text-xl font-bold">30%</span>
+                  <div className="w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0" style={{backgroundColor: '#38C558'}}>
+                    <span className="text-white text-2xl">🏨</span>
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">Restaurant Reactions</h3>
+                    <h3 className="text-xl font-semibold text-gray-900 mb-2">30% Restaurant Reactions</h3>
                     <p className="text-gray-600">Nearly 30% of allergic reactions happen in restaurants and hotels.</p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0" style={{backgroundColor: '#FF6B6B'}}>
-                    <span className="text-white text-xl">⚠️</span>
+                  <div className="w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0" style={{backgroundColor: '#FF6B6B'}}>
+                    <span className="text-white text-2xl">⚠️</span>
                   </div>
                   <div>
                     <h3 className="text-xl font-semibold text-gray-900 mb-2">Safety Crisis</h3>
@@ -169,17 +181,28 @@ const Home = () => {
           </div>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-8 py-4 rounded-lg font-semibold text-lg transition duration-200 transform hover:scale-105" style={{backgroundColor: '#38C558', color: 'white'}} onMouseEnter={(e) => e.target.style.backgroundColor = '#2E8B57'} onMouseLeave={(e) => e.target.style.backgroundColor = '#38C558'}>
-              Learn More About Our Mission
+            <button 
+              className="px-8 py-4 rounded-lg font-semibold text-lg transition duration-200 transform hover:scale-105" 
+              style={{backgroundColor: '#38C558', color: 'white'}} 
+              onMouseEnter={(e) => e.target.style.backgroundColor = '#2E8B57'} 
+              onMouseLeave={(e) => e.target.style.backgroundColor = '#38C558'}
+              onClick={() => navigate('/team')}
+            >
+              Learn More About Our Team
             </button>
-            <button className="border-2 border-white px-8 py-4 rounded-lg font-semibold text-lg transition duration-200 text-white hover:bg-white" onMouseEnter={(e) => {e.target.style.backgroundColor = 'white'; e.target.style.color = '#2196F3'}} onMouseLeave={(e) => {e.target.style.backgroundColor = 'transparent'; e.target.style.color = 'white'}}>
+            <button 
+              className="border-2 border-white px-8 py-4 rounded-lg font-semibold text-lg transition duration-200 text-white hover:bg-white" 
+              onMouseEnter={(e) => {e.target.style.backgroundColor = 'white'; e.target.style.color = '#2196F3'}} 
+              onMouseLeave={(e) => {e.target.style.backgroundColor = 'transparent'; e.target.style.color = 'white'}}
+              onClick={() => navigate('/contact')}
+            >
               Join Our Community
             </button>
           </div>
         </div>
       </section>
 
-      {/* Statistics Section */}
+      {/* Statistics Section - Updated with Icons */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
@@ -191,7 +214,7 @@ const Home = () => {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div className="text-center">
               <div className="w-20 h-20 rounded-full mx-auto mb-4 flex items-center justify-center" style={{backgroundColor: '#2196F3'}}>
-                <span className="text-white text-2xl font-bold">99%</span>
+                <span className="text-white text-3xl">🎯</span>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Accuracy Rate</h3>
               <p className="text-gray-600">AI-powered detection accuracy</p>
@@ -199,7 +222,7 @@ const Home = () => {
 
             <div className="text-center">
               <div className="w-20 h-20 rounded-full mx-auto mb-4 flex items-center justify-center" style={{backgroundColor: '#38C558'}}>
-                <span className="text-white text-2xl font-bold">50K+</span>
+                <span className="text-white text-3xl">🍽️</span>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Safe Meals</h3>
               <p className="text-gray-600">Meals safely identified daily</p>
@@ -207,7 +230,7 @@ const Home = () => {
 
             <div className="text-center">
               <div className="w-20 h-20 rounded-full mx-auto mb-4 flex items-center justify-center" style={{backgroundColor: '#FF6B6B'}}>
-                <span className="text-white text-2xl font-bold">200+</span>
+                <span className="text-white text-3xl">🤝</span>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Restaurant Partners</h3>
               <p className="text-gray-600">Trusted restaurant partnerships</p>
@@ -215,9 +238,9 @@ const Home = () => {
 
             <div className="text-center">
               <div className="w-20 h-20 rounded-full mx-auto mb-4 flex items-center justify-center" style={{backgroundColor: '#9C27B0'}}>
-                <span className="text-white text-2xl font-bold">24/7</span>
+                <span className="text-white text-3xl">💬</span>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Support</h3>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">24/7 Support</h3>
               <p className="text-gray-600">Round-the-clock assistance</p>
             </div>
           </div>

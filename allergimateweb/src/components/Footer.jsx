@@ -1,74 +1,115 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../assets/logo.png';
 
 const Footer = () => {
   return (
     <footer className="text-white" style={{backgroundColor: '#2196F3'}}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          {/* Company Info */}
-          <div className="col-span-1 md:col-span-2">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {/* Company Info - Left */}
+          <div className="text-left">
             <div className="flex items-center space-x-3 mb-4">
-                <div className="w-12 h-12 flex items-center justify-center">
-                    <img src={logo} alt="AllergiMate Logo" className="w-15 h-15 object-contain mt-2" />
-                </div>
-                <h2 className="text-2xl font-bold text-white">AllergiMate</h2>
+              <div className="w-12 h-12 flex items-center justify-center">
+                <img src={logo} alt="AllergiMate Logo" className="w-15 h-15 object-contain mt-2" />
+              </div>
+              <h2 className="text-2xl font-bold text-white">AllergiMate</h2>
             </div>
-            <p className="text-white mb-6 max-w-md">
-              AllergiMate is your trusted companion for managing allergies safely and effectively. 
-              We help you live confidently with advanced allergy tracking and prevention technology.
-            </p>
-            <div className="flex space-x-4">
-              <a href="#" className="text-white">
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
-                </svg>
-              </a>
-              <a href="#" className="text-white">
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.22 4.22 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.521 8.521 0 0 1-5.33 1.84c-.34 0-.68-.02-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23z"/>
-                </svg>
-              </a>
-              <a href="#" className="text-white">
-                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+            <div className="mb-6">
+              <p className="text-white font-semibold text-lg mb-2">
+                AllergiMate — Making allergy-safe living effortless.
+              </p>
+              <p className="text-white text-sm leading-relaxed">
+                AllergiMate is your trusted companion for managing allergies safely and effectively. 
+                We help you live confidently with advanced allergy tracking and prevention technology.
+              </p>
+            </div>
+          </div>
+
+          {/* Quick Links - Center */}
+          <div className="text-center ml-40">
+            <h3 className="text-lg font-semibold mb-4 text-white">Quick Links</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link to="/" className="text-white hover:text-gray-200 transition duration-200">
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link to="/about" className="text-white hover:text-gray-200 transition duration-200">
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link to="/product" className="text-white hover:text-gray-200 transition duration-200">
+                  Product
+                </Link>
+              </li>
+              <li>
+                <Link to="/team" className="text-white hover:text-gray-200 transition duration-200">
+                  Team
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="text-white hover:text-gray-200 transition duration-200">
+                  Contact
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Follow Us - Right */}
+          <div className="text-left ml-70">
+            <h3 className="text-lg font-semibold mb-4 text-white">Follow Us</h3>
+            <div className="space-y-3 flex flex-col items-start">
+              {/* LinkedIn */}
+              <a href="#" className="flex items-center space-x-2 text-white hover:text-gray-200 transition duration-200">
+                <span className="text-sm">LinkedIn</span>
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                 </svg>
               </a>
+
+              {/* X (Twitter) */}
+              <a href="#" className="flex items-center space-x-2 text-white hover:text-gray-200 transition duration-200">
+                <span className="text-sm">X</span>
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+              </a>
+
+              {/* Instagram */}
+              <a href="#" className="flex items-center space-x-2 text-white hover:text-gray-200 transition duration-200">
+                <span className="text-sm">Instagram</span>
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12.017 0C5.396 0 .029 5.367.029 11.987c0 6.621 5.367 11.988 11.988 11.988s11.987-5.367 11.987-11.988C24.014 5.367 18.647.001 12.017.001zM8.449 16.988c-1.297 0-2.448-.596-3.205-1.534l.002.001-.283-.342c-.315-.38-.506-.869-.506-1.401 0-.532.191-1.021.506-1.401l.283-.342c.757-.938 1.908-1.534 3.205-1.534s2.448.596 3.205 1.534l.283.342c.315.38.506.869.506 1.401 0 .532-.191 1.021-.506 1.401l-.283.342c-.757.938-1.908 1.534-3.207 1.534zm7.101 0c-1.297 0-2.448-.596-3.205-1.534l-.283-.342c-.315-.38-.506-.869-.506-1.401 0-.532.191-1.021.506-1.401l.283-.342c.757-.938 1.908-1.534 3.205-1.534s2.448.596 3.205 1.534l.283.342c.315.38.506.869.506 1.401 0 .532-.191 1.021-.506 1.401l-.283.342c-.757.938-1.908 1.534-3.205 1.534z"/>
+                </svg>
+              </a>
+
+              {/* Facebook */}
+              <a href="#" className="flex items-center space-x-2 text-white hover:text-gray-200 transition duration-200">
+                <span className="text-sm">Facebook</span>
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                </svg>
+              </a>
+
+              {/* TikTok */}
+              <a href="#" className="flex items-center space-x-2 text-white hover:text-gray-200 transition duration-200">
+                <span className="text-sm">TikTok</span>
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+                </svg>
+              </a>
             </div>
-          </div>
-
-          {/* Product */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4 text-white">Product</h3>
-            <ul className="space-y-2">
-              <li><a href="#" className="text-white">Features</a></li>
-              <li><a href="#" className="text-white">Pricing</a></li>
-              <li><a href="#" className="text-white">Download</a></li>
-              <li><a href="#" className="text-white">API</a></li>
-            </ul>
-          </div>
-
-          {/* Company */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4 text-white">Company</h3>
-            <ul className="space-y-2">
-              <li><a href="#" className="text-white">About Us</a></li>
-              <li><a href="#" className="text-white">Team</a></li>
-              <li><a href="#" className="text-white">Careers</a></li>
-              <li><a href="#" className="text-white">Contact</a></li>
-            </ul>
           </div>
         </div>
 
-        <div className="border-t border-white border-opacity-20 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-white text-sm">
-            © 2024 AllergiMate. All rights reserved.
+        {/* Bottom Section - Centered */}
+        <div className="border-t border-white border-opacity-20 mt-12 pt-8 text-center">
+          <p className="text-white text-sm text-left">
+            © 2025 AllergiMate. All rights reserved.
           </p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="text-white text-sm">Privacy Policy</a>
-            <a href="#" className="text-white text-sm">Terms of Service</a>
-            <a href="#" className="text-white text-sm">Support</a>
-          </div>
         </div>
       </div>
     </footer>
