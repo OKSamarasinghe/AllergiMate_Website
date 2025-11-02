@@ -1,1 +1,44 @@
 @import "tailwindcss";
+
+/* Custom AllergiMate Color Scheme */
+:root {
+  --primary-blue: #2196F3;
+  --primary-blue-dark: #1976D2;
+  --primary-blue-light: #42A5F5;
+  --primary-green: #38C558;
+  --light-blue: #E3F2FD;
+  --light-green: #E8F5E8;
+}
+
+/* Custom hover effects for consistency */
+.allergiMate-btn-primary {
+  background-color: var(--primary-blue);
+  color: white;
+  transition: all 0.2s ease;
+}
+
+.allergiMate-btn-primary:hover {
+  background-color: var(--primary-blue-dark);
+  transform: translateY(-1px);
+}
+
+.allergiMate-text-primary {
+  color: var(--primary-blue);
+}
+
+.allergiMate-text-primary:hover {
+  color: var(--primary-blue-dark);
+}
+
+.allergiMate-bg-primary {
+  background-color: var(--primary-blue);
+}
+
+.allergiMate-bg-gradient {
+  background: linear-gradient(135deg, var(--primary-blue-dark) 0%, var(--primary-blue) 50%, var(--primary-blue-light) 100%);
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
